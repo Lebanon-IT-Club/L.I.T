@@ -379,3 +379,8 @@ iframe {
     color: yellow !important; /* Make links stand out */
     text-decoration: underline wavy;
 }
+body {
+    background-color: #121212 !important; /* Dark grey */
+    color: #0ff; /* Cyberpunk neon text */
+    font-family: 'Orbitron', sans-serif; /* Sci-fi font */
+}
