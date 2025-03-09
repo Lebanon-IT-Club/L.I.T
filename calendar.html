@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L.I.T Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="logo"><span id="typewriter"></span><span class="cursor">_</span></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="https://www.instagram.com/lhs_infotechclub/" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="calendar-container">
+            <h2>Upcoming Events</h2>
+            <p>Stay up to date with Lebanon I.T. Club meetings and events.</p>
+
+            <!-- Embedded Google Calendar -->
+            <iframe src="https://calendar.google.com/calendar/embed?src=lebanon.i.t.club%40gmail.com&ctz=America%2FNew_York" 
+                style="border: 0" 
+                width="800" 
+                height="600" 
+                frameborder="0" 
+                scrolling="no">
+            </iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lebanon I.T. Club | Follow us on <a href="https://www.instagram.com/lhs_infotechclub/" target="_blank">Instagram</a></p>
+    </footer>
+
+    <!-- Typewriter Effect -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let text = "L.I.T Calendar";
+            let i = 0;
+            function typeEffect() {
+                if (i < text.length) {
+                    document.getElementById("typewriter").innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeEffect, 150); // Speed of typing
+                }
+            }
+            typeEffect();
+        });
+    </script>
+ <script>
+    document.addEventListener("keydown", function(event) {
+        // Check if the user presses Ctrl + N
+        if (event.ctrlKey && event.key.toLowerCase() === "m") {
+            event.preventDefault(); // Prevent the default browser action
+            activateNormanMode();
+        }
+
+        // Allow user to exit Norman Mode with "Escape" key
+        if (event.key === "Escape") {
+            deactivateNormanMode();
+        }
+    });
+
+    function activateNormanMode() {
+        document.body.classList.add("norman-mode");
+
+        // Replace all text in elements
+        let allElements = document.querySelectorAll("*");
+        allElements.forEach(element => {
+            if (element.children.length === 0) { // Only change text, not structure
+                element.dataset.originalText = element.innerHTML; // Store original text
+                element.innerHTML = "Norman";
+            }
+        });
+    }
+
+    function deactivateNormanMode() {
+        document.body.classList.remove("norman-mode");
+
+        // Restore original text
+        let allElements = document.querySelectorAll("*");
+        allElements.forEach(element => {
+            if (element.dataset.originalText) {
+                element.innerHTML = element.dataset.originalText;
+                delete element.dataset.originalText;
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

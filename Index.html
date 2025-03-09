@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebanon I.T. Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="logo">
+            <span id="typewriter"></span><span class="cursor">_</span>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="https://www.instagram.com/lhs_infotechclub/" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Join Our Club L.I.T</h2>
+            <p>Learn, Innovate, and Thrive in the world of Technology.</p>
+            <a href="https://classroom.google.com/c/NzU3Mzk4NDQ4NTky?cjc=cbdcyt6" target="_blank" class="join-button">Join Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lebanon I.T. Club | Follow us on <a href="https://www.instagram.com/lhs_infotechclub/" target="_blank">Instagram</a></p>
+    </footer>
+
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let titleText = "Lebanon I.T. Club."; // Includes the final dot
+            let titleIndex = 0;
+            let typewriter = document.getElementById("typewriter");
+    
+            function typeTitle() {
+                if (titleIndex < titleText.length) {
+                    let char = titleText.charAt(titleIndex);
+                    let span = document.createElement("span");
+                    span.textContent = char;
+                    
+                    // Only make the LAST dot clickable
+                    if (char === "." && titleIndex === titleText.length - 1) {
+                        span.id = "hidden-dot";
+                        span.style.cursor = "pointer";
+                        span.addEventListener("click", function() {
+                            window.location.href = "og.html"; // Redirect to OG page
+                        });
+                    }
+    
+                    typewriter.appendChild(span);
+                    titleIndex++;
+                    setTimeout(typeTitle, 150);
+                }
+            }
+    
+            typewriter.innerHTML = ""; // Reset before typing
+            typeTitle();
+        });
+    
+        // HACKER MODE - Fixed to Not Interfere with Typing Effect
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.altKey && event.key.toLowerCase() === "h") { 
+                activateHackerMode();
+            }
+        });
+    
+        function activateHackerMode() {
+            if (document.getElementById("hacker-overlay")) return;
+    
+            document.body.classList.add("hacker-mode");
+    
+            let hackerOverlay = document.createElement("div");
+            hackerOverlay.id = "hacker-overlay";
+            hackerOverlay.innerHTML = "<p>🔓 Hacker Mode Activated...</p>";
+            document.body.appendChild(hackerOverlay);
+    
+            let messages = [
+                "Hacking into User...",
+                "Downloading search history...",
+                "Deleting system 32...",
+                "Good Bye....... 🕵️‍♂️"
+            ];
+    
+            messages.forEach((msg, index) => {
+                setTimeout(() => {
+                    hackerOverlay.innerHTML += `<p>${msg}</p>`;
+                }, (index + 1) * 2000);
+            });
+    
+            setTimeout(() => {
+                hackerOverlay.innerHTML += `<p>🔁 Press Alt F4 to escape.</p>`;
+            }, (messages.length + 1) * 2000);
+    
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Escape") {
+                    document.body.classList.remove("hacker-mode");
+                    hackerOverlay.remove();
+                }
+            });
+        }
+    </script>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            // Check if the user presses Ctrl + N
+            if (event.ctrlKey && event.key.toLowerCase() === "m") {
+                event.preventDefault(); // Prevent the default browser action
+                activateNormanMode();
+            }
+    
+            // Allow user to exit Norman Mode with "Escape" key
+            if (event.key === "Escape") {
+                deactivateNormanMode();
+            }
+        });
+    
+        function activateNormanMode() {
+            document.body.classList.add("norman-mode");
+    
+            // Replace all text in elements
+            let allElements = document.querySelectorAll("*");
+            allElements.forEach(element => {
+                if (element.children.length === 0) { // Only change text, not structure
+                    element.dataset.originalText = element.innerHTML; // Store original text
+                    element.innerHTML = "Norman";
+                }
+            });
+        }
+    
+        function deactivateNormanMode() {
+            document.body.classList.remove("norman-mode");
+    
+            // Restore original text
+            let allElements = document.querySelectorAll("*");
+            allElements.forEach(element => {
+                if (element.dataset.originalText) {
+                    element.innerHTML = element.dataset.originalText;
+                    delete element.dataset.originalText;
+                }
+            });
+        }
+    </script>
+    
+    
+
+</body>
+</html>

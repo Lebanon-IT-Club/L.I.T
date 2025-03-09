@@ -1,0 +1,381 @@
+/* Import futuristic font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cyberpunk Background */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('https://cdn.pixabay.com/photo/2020/11/24/11/42/future-5772319_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #0ff; /* Neon Blue-Green */
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo & Terminal Typing Effect */
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #0ff;
+}
+
+/* Typing Cursor Effect */
+.cursor {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #0ff;
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Navigation Bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0ff;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #0ff;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px #0ff;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Neon Glowing Effect */
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00f; }
+    50% { text-shadow: 0 0 10px #00f, 0 0 20px #0ff, 0 0 30px #00f; }
+    100% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00f; }
+}
+
+/* Cyber-style Button */
+.join-button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: linear-gradient(90deg, #0ff, #00d4ff);
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Animation */
+.join-button:hover {
+    background: linear-gradient(90deg, #ff00ff, #ff005d);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: rgba(10, 10, 10, 0.9);
+    padding: 15px;
+    margin-top: 30px;
+    box-shadow: 0 -2px 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .join-button {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* Calendar Section */
+.calendar-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.calendar-container h2 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px #0ff;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.calendar-container p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Centering the Google Calendar */
+iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    iframe {
+        width: 90%;
+        height: 500px;
+    }
+}
+/* Blinking Terminal Cursor */
+.cursor {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #0ff;
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Clickable Easter Egg Dot (ONLY the last dot is clickable) */
+#hidden-dot {
+    color: #0ff;
+    text-shadow: 0 0 8px #0ff;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#hidden-dot:hover {
+    opacity: 0.5;
+}
+
+
+/* Info Page Sections */
+.info-section {
+    background: rgba(10, 10, 10, 0.85);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.info-section h2 {
+    font-size: 2rem;
+    text-shadow: 0 0 10px #0ff;
+    margin-bottom: 10px;
+}
+
+.info-section p, .info-section ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.info-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.info-section ul li {
+    margin-bottom: 10px;
+}
+
+.info-section ul li::before {
+    content: "➤";
+    color: #0ff;
+    margin-right: 8px;
+}
+
+.info-section a {
+    color: #0ff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info-section a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #0ff;
+}
+
+/* Smaller and Readable Cyberpunk Button */
+.join-button {
+    display: inline-block;
+    padding: 8px 16px; /* Smaller padding */
+    background: linear-gradient(90deg, #0ff, #00d4ff);
+    color: black;
+    font-size: 0.9rem; /* Reduce font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px; /* More compact */
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover Effect */
+.join-button:hover {
+    background: linear-gradient(90deg, #ff00ff, #ff005d);
+    box-shadow: 0 0 12px rgba(255, 0, 255, 0.6);
+    transform: scale(1.05);
+    color: rgb(161, 60, 60); /* Better contrast */
+}
+
+/* Ensures text stays visible */
+.join-button:active {
+    transform: scale(0.98);
+}
+
+/* Hidden Easter Egg (Clickable Dot in Logo) */
+#hidden-dot {
+    cursor: pointer;
+    color: #0ff;
+    text-shadow: 0 0 8px #0ff;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#hidden-dot:hover {
+    opacity: 0.5;
+}
+
+/* OG Members Secret Page */
+.og-section {
+    text-align: center;
+    padding: 30px;
+}
+
+.og-section h2 {
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px #0ff;
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+.og-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.og-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.og-section ul li {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+/* Hacker Mode Styles */
+.hacker-mode {
+    background: black !important;
+    color: #00ff00 !important;
+    font-family: 'Courier New', monospace;
+}
+
+#hacker-overlay {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ff00;
+    padding: 20px;
+    border: 1px solid #00ff00;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    box-shadow: 0 0 10px #00ff00;
+    z-index: 9999;
+}
+
+#hacker-overlay p {
+    margin: 10px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* Norman Mode Styles */
+.norman-mode {
+    background: black !important;
+    color: #ff00ff !important; /* Bright Pink Text */
+    font-family: 'Comic Sans MS', cursive !important; /* Silly font */
+    text-transform: uppercase;
+}
+
+.norman-mode a {
+    color: yellow !important; /* Make links stand out */
+    text-decoration: underline wavy;
+}

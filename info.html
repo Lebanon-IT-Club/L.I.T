@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lebanon I.T. Club | About Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="logo"><span id="typewriter"></span><span class="cursor">_</span></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="https://www.instagram.com/lhs_infotechclub/" target="_blank">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="info-section">
+            <h2>About Lebanon I.T. Club</h2>
+            <p>Welcome to the Lebanon I.T. Club (L.I.T), where technology enthusiasts come together to explore, innovate, and excel in the ever-evolving world of Information Technology.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>Our Collaborations</h2>
+            <p>We are proud to partner with organizations like <a href="https://interalliance.org/" target="_blank">INTERalliance of Greater Cincinnati</a>, which aims to empower students through robust knowledge of IT. Our members participate in events such as the <a href="https://techolympics.org/" target="_blank">TechOlympics</a>, the nation's largest student-run tech conference, offering workshops, competitions, and networking opportunities.</p>
+        </section>
+
+        <section class="info-section">
+            <h2>Activities and Opportunities</h2>
+            <ul>
+                <li><strong>Cybersecurity Competitions:</strong> Engage in Capture the Flag (CTF) tournaments like <a href="https://www.uscyberpatriot.org/" target="_blank">CyberPatriot</a>, offering hands-on experience and opportunities to earn scholarships. :contentReference[oaicite:1]{index=1}</li>
+                <li><strong>Field Trips:</strong> Visit leading tech companies, research labs, and IT departments to gain real-world insights into the industry.</li>
+                <li><strong>Co-op Programs:</strong> Collaborate with universities such as the <a href="https://www.uc.edu/" target="_blank">University of Cincinnati (UC)</a> to help members secure co-op positions, providing valuable work experience.</li>
+                <li><strong>Skill Development:</strong> Participate in workshops and projects focusing on AI development, coding, cybersecurity, and other IT skills.</li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <h2>Join Us</h2>
+            <p>If you're passionate about technology and eager to learn, the Lebanon I.T. Club is the place for you. <a href="https://classroom.google.com/c/NzU3Mzk4NDQ4NTky?cjc=cbdcyt6" target="_blank" class="join-button">Join Now</a> to embark on a journey of innovation and growth.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Lebanon I.T. Club | Follow us on <a href="https://www.instagram.com/lhs_infotechclub/" target="_blank">Instagram</a></p>
+    </footer>
+
+    <!-- Typewriter Effect -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let text = "About L.I.T";
+            let i = 0;
+            function typeEffect() {
+                if (i < text.length) {
+                    document.getElementById("typewriter").innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeEffect, 150); // Speed of typing
+                }
+            }
+            typeEffect();
+        });
+    </script>
+ <script>
+    document.addEventListener("keydown", function(event) {
+        // Check if the user presses Ctrl + N
+        if (event.ctrlKey && event.key.toLowerCase() === "m") {
+            event.preventDefault(); // Prevent the default browser action
+            activateNormanMode();
+        }
+
+        // Allow user to exit Norman Mode with "Escape" key
+        if (event.key === "Escape") {
+            deactivateNormanMode();
+        }
+    });
+
+    function activateNormanMode() {
+        document.body.classList.add("norman-mode");
+
+        // Replace all text in elements
+        let allElements = document.querySelectorAll("*");
+        allElements.forEach(element => {
+            if (element.children.length === 0) { // Only change text, not structure
+                element.dataset.originalText = element.innerHTML; // Store original text
+                element.innerHTML = "Norman";
+            }
+        });
+    }
+
+    function deactivateNormanMode() {
+        document.body.classList.remove("norman-mode");
+
+        // Restore original text
+        let allElements = document.querySelectorAll("*");
+        allElements.forEach(element => {
+            if (element.dataset.originalText) {
+                element.innerHTML = element.dataset.originalText;
+                delete element.dataset.originalText;
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
